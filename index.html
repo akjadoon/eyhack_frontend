@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+<!-- <div id ="app">
+	<h1>{{ message }}</h1>
+</div> -->
+
+	<script src="https://unpkg.com/vue@2.4.2"></script>
+<!--
+	<script type="text/javascript">
+		new Vue({
+			el: '#app',
+			data: {
+				message: 'Hello World'
+			}
+		});
+		</script> -->
+		<div id='map' style='width: 1000px; height: 800px;'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoidGFuYXkxMiIsImEiOiJjajV5djM5ZGYwM3l0MnFtcXM5MmNlaWlmIn0.bTN2lru9zbgj-4yyU9TH3A';
+var map = new mapboxgl.Map({
+	 container: 'map',
+	 style: 'mapbox://styles/mapbox/streets-v9'
+});
+</script>
+</body>
+</html>

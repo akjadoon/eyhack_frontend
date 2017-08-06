@@ -30,8 +30,8 @@ var stores = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          114.185936,
           22.280770, 
-          114.185936
         ]
       },
       "properties": {
@@ -42,7 +42,8 @@ var stores = {
         "country": "Hong Kong",
         "predictedDensity": 42,
         "predictedWaitTime": 90,
-        "maxDensity": 74
+        "maxDensity": 74,
+        "RID": 0
       }
     },
     {
@@ -50,8 +51,8 @@ var stores = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          114.181487,
           22.280623, 
-          114.181487
         ]
       },
       "properties": {
@@ -62,7 +63,8 @@ var stores = {
         "country": "Hong Kong",
         "predictedDensity": 22,
         "predictedWaitTime": 550,
-        "maxDensity": 24
+        "maxDensity": 24,
+        "RID": 1
       }
     },
     {
@@ -70,8 +72,9 @@ var stores = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          114.176949,
           22.280792, 
-          114.176949
+
         ]
       },
       "properties": {
@@ -82,7 +85,8 @@ var stores = {
         "country": "Hong Kong",
         "predictedDensity": 14,
         "predictedWaitTime": 250,
-        "maxDensity": 18
+        "maxDensity": 18,
+        "RID": 2
       }
     },
     {
@@ -90,8 +94,9 @@ var stores = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          114.189701,
           22.279940, 
-          114.189701
+
         ]
       },
       "properties": {
@@ -110,13 +115,14 @@ var stores = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          114.186436,
           22.284262, 
-          114.186436
+          
         ]
       },
       "properties": {
         "phoneFormatted": "(852) 547-9338",
-        "name": "Rando Seafood place"
+        "name": "Rando Seafood place",
         "address": "221 Fuk Man Rd",
         "city": "Causeway Bay",
         "country": "Hong Kong",
@@ -125,7 +131,7 @@ var stores = {
         "maxDensity": 15
       }
     }
-}]
+]
   };
 // This adds the data to the map
 map.on('load', function (e) {
@@ -136,6 +142,9 @@ map.on('load', function (e) {
   });
   // Initialize the list
   buildLocationList(stores);
+  $.get("http://httpbin.org/get", function(data, status){
+    console.log(data);
+  });
 
 });
 
@@ -178,7 +187,7 @@ function flyToStore(currentFeature) {
       center: currentFeature.geometry.coordinates,
       zoom: 15
     });
-   $.
+   
 }
 
 function createPopUp(currentFeature) {

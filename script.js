@@ -43,7 +43,7 @@ var stores = {
         "predictedDensity": 42,
         "predictedWaitTime": 90,
         "maxDensity": 74,
-        "RID": 0
+        "RID": "0"
       }
     },
     {
@@ -64,7 +64,7 @@ var stores = {
         "predictedDensity": 22,
         "predictedWaitTime": 550,
         "maxDensity": 24,
-        "RID": 1
+        "RID": "1"
       }
     },
     {
@@ -85,7 +85,7 @@ var stores = {
         "predictedDensity": 14,
         "predictedWaitTime": 250,
         "maxDensity": 18,
-        "RID": 2
+        "RID": "2"
       }
     },
     {
@@ -105,7 +105,8 @@ var stores = {
         "country": "Hong Kong",
         "predictedDensity": 36,
         "predictedWaitTime": 850,
-        "maxDensity": 44
+        "maxDensity": 44,
+        "RID": "3"
       }
     },
     {
@@ -125,7 +126,8 @@ var stores = {
         "country": "Hong Kong",
         "predictedDensity": 14,
         "predictedWaitTime": 120,
-        "maxDensity": 15
+        "maxDensity": 15,
+        "RID":"4"
       }
     }
 ]
@@ -180,7 +182,8 @@ function flyToStore(currentFeature) {
       center: currentFeature.geometry.coordinates,
       zoom: 15
     });
-  $.get("http://httpbin.org/get", function(data, status){
+  // console.log(currentFeature.properties)
+  $.get("localhost:8080/?RID="+currentFeature.properties.RID, function(data, status){
     console.log(data);
   });
 }
@@ -193,7 +196,10 @@ function createPopUp(currentFeature) {
   var popup = new mapboxgl.Popup({closeOnClick: false})
         .setLngLat(currentFeature.geometry.coordinates)
         .setHTML('<h3>Restaurant</h3>' +
-          '<h4>' + currentFeature.properties.address + '</h4>')
+          '<h4>' + currentFeature.properties.address + '</h4>'+
+          '<h4>' + "Predicted Density: "+currentFeature.properties.predictedDensity + "pax"+'</h4>'+
+          '<h4>' + "Predicted waitime: "+currentFeature.properties.predictedWaitTime + "sec"+'</h4>'
+          )
         .addTo(map);
 }
 

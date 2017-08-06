@@ -184,10 +184,7 @@ function flyToStore(currentFeature) {
       center: currentFeature.geometry.coordinates,
       zoom: 15
     });
-<<<<<<< HEAD
-   
-=======
->>>>>>> e19213d7b6ab1f7b1c96319f34d49c04ed0f580e
+
 }
 
 function createPopUp(currentFeature) {

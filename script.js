@@ -30,7 +30,7 @@ var stores = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          22.280770, 
+          22.280770,
           114.185936
         ]
       },
@@ -50,7 +50,7 @@ var stores = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          22.280623, 
+          22.280623,
           114.181487
         ]
       },
@@ -70,7 +70,7 @@ var stores = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          22.280792, 
+          22.280792,
           114.176949
         ]
       },
@@ -90,7 +90,7 @@ var stores = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          22.279940, 
+          22.279940,
           114.189701
         ]
       },
@@ -110,13 +110,13 @@ var stores = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          22.284262, 
+          22.284262,
           114.186436
         ]
       },
       "properties": {
         "phoneFormatted": "(852) 547-9338",
-        "name": "Rando Seafood place"
+        "name": "Rando Seafood place",
         "address": "221 Fuk Man Rd",
         "city": "Causeway Bay",
         "country": "Hong Kong",
@@ -125,7 +125,7 @@ var stores = {
         "maxDensity": 15
       }
     }
-}]
+  ]
   };
 // This adds the data to the map
 map.on('load', function (e) {
@@ -178,7 +178,6 @@ function flyToStore(currentFeature) {
       center: currentFeature.geometry.coordinates,
       zoom: 15
     });
-   $.
 }
 
 function createPopUp(currentFeature) {
@@ -216,7 +215,7 @@ function buildLocationList(data) {
       details.innerHTML += ' &middot; ' + prop.phoneFormatted;
     }
 
-
+    map.addControl(new mapboxgl.NavigationControl());
 
     link.addEventListener('click', function(e){
       // Update the currentFeature to the store associated with the clicked link

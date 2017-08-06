@@ -139,10 +139,6 @@ map.on('load', function (e) {
   });
   // Initialize the list
   buildLocationList(stores);
-  $.get("http://httpbin.org/get", function(data, status){
-    console.log(data);
-  });
-
 });
 
 // This is where your interactions with the symbol layer used to be
@@ -184,7 +180,9 @@ function flyToStore(currentFeature) {
       center: currentFeature.geometry.coordinates,
       zoom: 15
     });
-
+  $.get("http://httpbin.org/get", function(data, status){
+    console.log(data);
+  });
 }
 
 function createPopUp(currentFeature) {

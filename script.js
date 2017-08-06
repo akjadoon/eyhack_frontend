@@ -16,7 +16,7 @@ var map = new mapboxgl.Map({
   // style URL
   style: 'mapbox://styles/mapbox/light-v9',
   // initial position in [long, lat] format
-  center: [-77.034084142948, 38.909671288923],
+  center: [22.3864, -24.6],
   // initial zoom
   zoom: 13,
   scrollZoom: false
@@ -312,6 +312,7 @@ function flyToStore(currentFeature) {
       center: currentFeature.geometry.coordinates,
       zoom: 15
     });
+   $.
 }
 
 function createPopUp(currentFeature) {
@@ -372,4 +373,3 @@ function buildLocationList(data) {
     });
   }
 }
-

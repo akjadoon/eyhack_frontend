@@ -74,7 +74,6 @@ var stores = {
         "coordinates": [
           114.176949,
           22.280792, 
-
         ]
       },
       "properties": {
@@ -96,7 +95,6 @@ var stores = {
         "coordinates": [
           114.189701,
           22.279940, 
-
         ]
       },
       "properties": {
@@ -117,7 +115,6 @@ var stores = {
         "coordinates": [
           114.186436,
           22.284262, 
-          
         ]
       },
       "properties": {
@@ -187,7 +184,10 @@ function flyToStore(currentFeature) {
       center: currentFeature.geometry.coordinates,
       zoom: 15
     });
+<<<<<<< HEAD
    
+=======
+>>>>>>> e19213d7b6ab1f7b1c96319f34d49c04ed0f580e
 }
 
 function createPopUp(currentFeature) {
@@ -197,7 +197,7 @@ function createPopUp(currentFeature) {
 
   var popup = new mapboxgl.Popup({closeOnClick: false})
         .setLngLat(currentFeature.geometry.coordinates)
-        .setHTML('<h3>Sweetgreen</h3>' +
+        .setHTML('<h3>Restaurant</h3>' +
           '<h4>' + currentFeature.properties.address + '</h4>')
         .addTo(map);
 }
@@ -225,7 +225,7 @@ function buildLocationList(data) {
       details.innerHTML += ' &middot; ' + prop.phoneFormatted;
     }
 
-
+    map.addControl(new mapboxgl.NavigationControl());
 
     link.addEventListener('click', function(e){
       // Update the currentFeature to the store associated with the clicked link

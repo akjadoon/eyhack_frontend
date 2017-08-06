@@ -16,12 +16,12 @@ var map = new mapboxgl.Map({
   // style URL
   style: 'mapbox://styles/mapbox/light-v9',
   // initial position in [long, lat] format
-  center: [22.3864, -24.6],
+  center: [113.9418, 22.2665],
   // initial zoom
-  zoom: 13,
+  zoom: 10,
   scrollZoom: false
 });
-
+    map.addControl(new mapboxgl.NavigationControl());
 var stores = {
   "type": "FeatureCollection",
   "features": [
@@ -31,7 +31,7 @@ var stores = {
         "type": "Point",
         "coordinates": [
           114.185936,
-          22.280770, 
+          22.280770,
         ]
       },
       "properties": {
@@ -52,7 +52,7 @@ var stores = {
         "type": "Point",
         "coordinates": [
           114.181487,
-          22.280623, 
+          22.280623,
         ]
       },
       "properties": {
@@ -73,7 +73,7 @@ var stores = {
         "type": "Point",
         "coordinates": [
           114.176949,
-          22.280792, 
+          22.280792,
         ]
       },
       "properties": {
@@ -94,7 +94,7 @@ var stores = {
         "type": "Point",
         "coordinates": [
           114.189701,
-          22.279940, 
+          22.279940,
         ]
       },
       "properties": {
@@ -114,7 +114,7 @@ var stores = {
         "type": "Point",
         "coordinates": [
           114.186436,
-          22.284262, 
+          22.284262,
         ]
       },
       "properties": {
@@ -219,8 +219,6 @@ function buildLocationList(data) {
     if (prop.phone) {
       details.innerHTML += ' &middot; ' + prop.phoneFormatted;
     }
-
-    map.addControl(new mapboxgl.NavigationControl());
 
     link.addEventListener('click', function(e){
       // Update the currentFeature to the store associated with the clicked link
